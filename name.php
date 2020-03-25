@@ -5,24 +5,24 @@
 	<script>
 		function myFun()
 		{
-			var correct_way= /^ A-Za-z/+$;
+			var correct_way= /^[A-Za-z]+$/;
 
-			var a= document.getElementById("User_Name").value;
+			var a = document.getElementById("User_Name").value;
 			if(a=="")
 			{
-				document.getElementById("Message").innerHTML="**Please fill name";
+				document.getElementById("Message").innerHTML="Please fillup name";
 				return false;
 			}
-			if(a.length<3 || a.length>20)
+			if(a.length<3)
 			{
-				document.getElementById("Message").innerHTML="** Name does not match the limit ";
+				document.getElementById("Message").innerHTML=" Name does not match the limit ";
 				return false;
 			}
 			if(a.match(correct_way))
 				true;
 			else
 			{
-				document.getElementById("Message").innerHTML=" **use alphabets";
+				document.getElementById("Message").innerHTML="use alphabets";
 				return false;
 			}
 		} 
