@@ -1,38 +1,41 @@
 <html>
 <head>
-<script type="text/javascript">
-function validation()
-{
-	var a= document.getElementBycharacter('name').value;
-
-if(a=="")
-{
-alert("Please Enter Your Name");
-document.getElementBycharacter('name').value;
-return false;
-}
-
-if ((a.length < 2) || (a.length < 10))
-{
-alert("Your Character must be 2 to 10 Character");
-document.getElementBycharacter('name').value;
-return false;
-}
-document.getElementBycharacter('msg').innerHTML = name;
-}
-
-</script>
 </head>
 <body>
-<form name="form" method="post" onsubmit="return validation()">
-<tr>
-<td> Name:</td><br>
-<td><input type="text" name="name""  pattern="[A-Za-z]+"></td><br>
-</tr>
-<tr>
-<td></td><br>
-<td><input type="submit" name="sub" value="Submit"></td>
-</tr>
+	<script>
+		function myFun()
+		{
+			var correct_way= /^ A-Za-z/+$;
+
+			var a= document.getElementById("User_Name").value;
+			if(a=="")
+			{
+				document.getElementById("Message").innerHTML="**Please fill name";
+				return false;
+			}
+			if(a.length<3 || a.length>20)
+			{
+				document.getElementById("Message").innerHTML="** Name does not match the limit ";
+				return false;
+			}
+			if(a.match(correct_way))
+				true;
+			else
+			{
+				document.getElementById("Message").innerHTML=" **use alphabets";
+				return false;
+			}
+		} 
+
+
+</script>
+<form onsubmit="return myFun()">
+
+Name:<br>
+<input type="text" id="User_Name" value="">
+<span id="Message"></span><br>
+<input type="submit"  value="Submit"></input>
+
 </form>
 </body>
 </html>
