@@ -1,41 +1,25 @@
 <html>
 <head>
-			<script>
-		function myFun()
-		{
 			
-
-			var a1 = document.getElementById("a1").value;
-			var a2 = document.getElementById("a2").value;
-			var a3 = document.getElementById("a3").value;
-			if(a1.checked==true)
-			{
-				alert(" The selected one is :" +a1.value);
-				
-			}
-			else if(a2.checked==true)
-			{
-				alert(" The selected one is :" +a2.value);
-				
-			}
-			else if(a3.checked==true)
-			{
-				alert(" The selected one is :" +a3.value);
-				
-			}
-			
-			else
-
-			alert(" The is no selected type:" );
-			
-		} 
-
+		
+	<script>
+    function myFun(form) {
+        var radio1 = document.getElementById("a1").checked;
+        var radio2 = document.getElementById("a2").checked;
+        var radio3 = document.getElementById("a3").checked;
+        if ((radio1=="") && (radio2=="") && (radio3=="")  ) {
+            alert('You must one !!');
+            return false;
+        }
+        return true;
+    }
 
 </script>
 
+
 </head>
 <body>
-
+<form name="form1" onsubmit="return myFun()">
 
 	Gender:<br>
 	<input type="radio" id="a1" name="grp1" value="Male">Male
